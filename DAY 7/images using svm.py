@@ -15,7 +15,7 @@ data = datagen.flow_from_directory(data_dir, target_size=image_size, batch_size=
 class_labels = list(data.class_indices.keys())
 base_model = VGG16(weights='imagenet', include_top=False, input_shape=(224, 224, 3))
 features = base_model.predict(data)
-features = features.reshape(features.shape[0], -1)  # Flatten the features
+features = features.reshape(features.shape[0], -1)  
 le = LabelEncoder()
 labels = le.fit_transform(data.classes)
 X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.3, random_state=42)
