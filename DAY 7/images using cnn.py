@@ -32,7 +32,7 @@ model = models.Sequential([
     layers.MaxPooling2D((2, 2)),
     layers.Flatten(),
     layers.Dense(128, activation='relu'),
-    layers.Dense(len(target_names), activation='softmax')  # Number of classes is dynamic
+    layers.Dense(len(target_names), activation='softmax')  
 ])
 
 
